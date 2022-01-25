@@ -7,6 +7,22 @@ function computerPlay(){
     return possible_moves[getRandomInt(3)];
 }
 
+function playerPlay(){
+    let playerSelection = prompt("Choose (Rock/Paper/Scissors)");
+    playerSelection = playerSelection.toLowerCase();
+
+    if(playerSelection == "rock"){
+        return "Rock";
+    } else if (playerSelection == "paper"){
+        return "Paper";
+    } else if (playerSelection == "scissors"){
+        return "Scissors";
+    } else {
+        console.log(playerSelection + " is not a valid option. Choose again!");
+        return playerPlay();
+    }
+}
+
 function playRound(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         console.log("Tie!")
@@ -28,22 +44,6 @@ function playRound(playerSelection, computerSelection){
         } else {
             console.log("You won! Scissors beats Paper");
         }
-    }
-}
-
-function playerPlay(){
-    let playerSelection = prompt("Choose (Rock/Paper/Scissors)");
-    playerSelection = playerSelection.toLowerCase();
-
-    if(playerSelection == "rock"){
-        return "Rock";
-    } else if (playerSelection == "paper"){
-        return "Paper";
-    } else if (playerSelection == "scissors"){
-        return "Scissors";
-    } else {
-        console.log(playerSelection + " is not a valid option. Choose again!");
-        return playerPlay();
     }
 }
 
